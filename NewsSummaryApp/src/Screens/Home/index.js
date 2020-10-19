@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useLayoutEffect} from 'react';
 import {
   StyleSheet,
@@ -72,7 +73,10 @@ const Home = ({navigation}) => {
           <Text style={styles.titleText}>Choose by Category</Text>
         </View>
         <View style={styles.iconContainer}>
-          <View style={{alignItems: 'center'}}>
+          <TouchableOpacity
+            style={{alignItems: 'center'}}
+            activeOpacity={0.7}
+            onPress={() => navigation.navigate('Category', {category: '정치'})}>
             <Image
               source={require('../../Assets/Images/ic_policy.png')}
               style={{
@@ -81,8 +85,11 @@ const Home = ({navigation}) => {
               }}
             />
             <Text style={{color: '#FFF'}}>정치</Text>
-          </View>
-          <View style={{alignItems: 'center'}}>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{alignItems: 'center'}}
+            activeOpacity={0.7}
+            onPress={() => navigation.navigate('Category', {category: '경제'})}>
             <Image
               source={require('../../Assets/Images/ic_economy.png')}
               style={{
@@ -91,7 +98,7 @@ const Home = ({navigation}) => {
               }}
             />
             <Text style={{color: '#FFF'}}>경제</Text>
-          </View>
+          </TouchableOpacity>
           <View style={{alignItems: 'center'}}>
             <Image
               source={require('../../Assets/Images/ic_society.png')}
